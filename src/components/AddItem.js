@@ -8,6 +8,10 @@ class AddItem extends Component {
          inputValue: ''
       }
    }
+  componentDidMount(){
+     document.querySelector("input").focus();
+  }
+
    handleChange = (e)=>{
       this.setState({inputValue: e.target.value});
    }
@@ -16,12 +20,22 @@ class AddItem extends Component {
       AppStore.addTodo(this.state.inputValue);
       this.setState({inputValue: ''});
    }
+   uniKeyCode= (event)=>{
+      var char = event.which || event.keyCode;
+      if(char ===13){
+         this.handleAdd();
+      }
+   }
 
 
    render() {
       return (
          <div>
-            <input type="text" value={this.state.inputValue} onChange={this.handleChange}/>
+            <input type="text" 
+               id="input" 
+               value={this.state.inputValue} 
+               onChange={this.handleChange}
+               onKeyPress={this.uniKeyCode}/>
             <button onClick={this.handleAdd}>新增</button>
          </div>
       );

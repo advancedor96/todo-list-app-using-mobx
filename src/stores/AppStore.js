@@ -22,6 +22,15 @@ _.assign(AppStore, {
 
 
    }),
+   toggleFinish: action((element)=>{
+     element.completed = !element.completed;
+   }),
+   modify: action(function(o){
+      let newValue = prompt('輸入新值:', o.task); 
+      if(newValue!==null) {
+         o.task = newValue;
+      }
+   }),
    delete: action(function(element){
      //搜尋element在array裡的定位
      let idx = this.todos.indexOf(element);
