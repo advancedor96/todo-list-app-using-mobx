@@ -1,0 +1,8 @@
+#addItem{
+   width:100%;
+   margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+   padding-bottom: 45px;
+}

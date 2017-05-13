@@ -1,5 +1,5 @@
 import {observable, action} from 'mobx';
-import mobx from 'mobx';
+// import mobx from 'mobx';
 import _ from 'lodash';
 
 const uuidV4 = require('uuid/v4');

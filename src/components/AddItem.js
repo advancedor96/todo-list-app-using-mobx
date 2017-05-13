@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AppStore from '../stores/AppStore.js';
-
+import './AddItem.css';
 class AddItem extends Component {
    constructor(props){
       super(props);
@@ -30,7 +30,7 @@ class AddItem extends Component {
 
    render() {
       return (
-         <div>
+         <div id="addItem">
             <input type="text" 
                id="input" 
                value={this.state.inputValue} 
