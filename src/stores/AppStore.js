@@ -1,4 +1,5 @@
 import {observable, action} from 'mobx';
+import mobx from 'mobx';
 import _ from 'lodash';
 
 const uuidV4 = require('uuid/v4');
@@ -20,6 +21,17 @@ _.assign(AppStore, {
       });
 
 
+   }),
+   delete: action(function(element){
+     //搜尋element在array裡的定位
+     let idx = this.todos.indexOf(element);
+
+     if( idx > -1){
+     //刪除他
+       this.todos.splice(idx , 1);
+     }else{
+       console.warn('找不到要刪的元素')
+     }
    })
   //  report: action(function(){
  	// 	if (this.todos.length === 0)
