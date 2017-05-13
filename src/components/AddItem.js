@@ -17,6 +17,9 @@ class AddItem extends Component {
    }
 
    handleAdd = ()=>{
+      if(this.state.inputValue === ''){
+         return;
+      }
       AppStore.addTodo(this.state.inputValue);
       this.setState({inputValue: ''});
    }
