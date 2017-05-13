@@ -8,6 +8,19 @@ class AddItem extends Component {
          inputValue: ''
       }
    }
+   
+   render() {
+      return (
+         <div id="addItem">
+            <input type="text" 
+               id="input" 
+               value={this.state.inputValue} 
+               onChange={this.handleChange}
+               onKeyPress={this.uniKeyCode}/>
+            <button onClick={this.handleAdd}>新增</button>
+         </div>
+      );
+   }
   componentDidMount(){
      document.querySelector("input").focus();
   }
@@ -28,20 +41,6 @@ class AddItem extends Component {
       if(char ===13){
          this.handleAdd();
       }
-   }
-
-
-   render() {
-      return (
-         <div id="addItem">
-            <input type="text" 
-               id="input" 
-               value={this.state.inputValue} 
-               onChange={this.handleChange}
-               onKeyPress={this.uniKeyCode}/>
-            <button onClick={this.handleAdd}>新增</button>
-         </div>
-      );
    }
 }
 
